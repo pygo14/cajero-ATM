@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automático</title>
+    <link rel="stylesheet" href="atm.css">
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <h1>Cajero Automático</h1>
+        <form id="loginForm">
+            <label for="account">Cuenta:</label>
+            <input type="text" id="account" name="account" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <div class="container" id="atmContainer" style="display: none;">
+        <h1>Bienvenido</h1>
+        <p>Saldo actual: <span id="balance">$0</span></p>
+        <button id="depositBtn">Depositar</button>
+        <button id="withdrawBtn">Retirar</button>
+        <button id="transferBtn">Transferir</button>
+        <button id="balanceBtn">Consultar Saldo</button>
+        <button id="statementBtn">Estado de Cuenta</button>
+        <button id="logoutBtn">Salir</button>
+        <div id="transactionContainer">
+            <form id="transactionForm" style="display: none;">
+                <label for="amount">Monto:</label>
+                <input type="number" id="amount" name="amount" required>
+                <button type="submit">Aceptar</button>
+            </form>
+            <form id="transferForm" style="display: none;">
+                <label for="transferAccount">Cuenta Destino:</label>
+                <input type="text" id="transferAccount" name="transferAccount" required>
+                <label for="transferAmount">Monto:</label>
+                <input type="number" id="transferAmount" name="transferAmount" required>
+                <button type="submit">Transferir</button>
+            </form>
+        </div>
+        <div id="statementContainer" style="display: none;">
+            <h2>Estado de Cuenta</h2>
+            <ul id="statementList"></ul>
+        </div>
+    </div>
+    <script src="atm.js"></script>
+</body>
+</html>
